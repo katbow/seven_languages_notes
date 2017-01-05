@@ -49,3 +49,57 @@ be found, and how things evolve.
 the function definition
 * compile with `c(module_name).` and run with `module_name:function_name(params).`
 * After it is compiled there will be a .beam file
+
+## Pattern matching
+
+#### Tuple Pattern Matching
+
+If you define a person as:
+
+```erl
+Person = {person, {name, "Katherine Bowler"}, {Profession, "Being awesome"}}.
+```
+
+We can assign each of the `name` and `profession` to the variables `Name` and
+`Profession`. We can do this with pattern matching:
+
+```erl
+{person, {name, Name}, {profession, Profession}} = Person.
+```
+
+Then if we want to look at the variables `Name` or `Profession` it will return
+the correct values from the tuple.
+
+```erl
+1> Name.
+"Katherine Bowler"
+2> Profession.
+"Being Awesome"
+```
+
+#### List Pattern matching
+
+A list has a head and a tail, with the head being the first element and the tail
+being the rest of the list.
+
+```erl
+3> [Head | Tail] = [1, 2, 3, 4].
+[1, 2, 3, 4]
+4> Head.
+1
+5> Tail.
+[2, 3, 4]
+```
+
+The tail can also be split into its own head/tail split.
+
+```erl
+6> [One, Two|Rest] = [1, 2, 3, 4].
+[1, 2, 3, 4]
+7> One.
+1
+8> Two.
+2
+9> Rest.
+[3, 4]
+```
