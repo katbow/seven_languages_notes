@@ -29,7 +29,7 @@ language unique, such as BEAM in Erlang.
 An important quote from Tate for learning the languages in the book
 (or any new language) that stuck out for me was:
 
-*"If you look online for the answers before trying to  code the exercises
+_"If you look online for the answers before trying to  code the exercises
 yourself, you'll fail. You will want to **try the exercises first**, fully
 recognizing that **you'll fail a few of them**. Learning **syntax** is always
-easier than learning **reasoning**"*
+easier than learning **reasoning**"_
