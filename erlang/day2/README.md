@@ -65,4 +65,32 @@ lists:any(function, List).
 single value from all elements (e.g. adds them all together)
 
 ## Advanced List Concepts
-// TODO
+
+#### List Construction
+
+In Erlang lists are built without mutable state (because it is functional!).
+Instead, you return a new list by adding items to a list from the head. It uses
+the [H|T] construct from lists. Take a look at the `double_all` function in
+day2.erl If you run the function with `[1, 2, 3]` it will return `[2, 4, 6]`.
+
+#### List Comprehension
+
+`map` is one of the most important functions in any functional language because
+it can be used to manipulate lists/data. Erlang takes this a step further with
+list comprehensions.
+
+* A list comprehension takes the form of `[Expression || Clause1, Clause2, ..., ClauseN]`
+* List comprehensions can have an arbitrary number of clauses
+* The clauses can either be generators(add to list) or filters(remove from list)
+* A *generator* matches a pattern on the left to elements of a list on the right
+* A *filter* can be a boolean expression or function returning a boolean
+
+This list comprehension includes both a filter and generator clause.
+
+```erl
+[X || X <- [1, 2, 3, 4], X < 4, X > 1].
+[2, 3]
+```
+The first clause is a **generator** which takes X as each element from [1, 2, 3, 4].
+The second & third clauses are **filters** which says that X is only taken when
+it is less than 4 or greater than 1.

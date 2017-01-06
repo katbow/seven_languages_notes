@@ -34,7 +34,7 @@ the function definition
 If you define a person as:
 
 ```erl
-Person = {person, {name, "Katherine Bowler"}, {Profession, "Being awesome"}}.
+Person = {person, {name, "Katherine Bowler"}, {profession, "Being awesome"}}.
 ```
 
 We can assign each of the `name` and `profession` to the variables `Name` and
